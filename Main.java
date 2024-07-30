@@ -38,12 +38,6 @@ public class Main {
         contact.AddUser(mohamed);
         contact.AddUser(ibrahim);
         contact.AddUser(youssef);
-
-        //<------------------edit user info--------------->
-        System.out.print("Enter the ID of the user your want to edit : ");
-        String userId = scanner.next();
-        System.out.println();
-        contact.EditUser(userId);
         
         //<------------------delete user--------------->
         
@@ -61,14 +55,23 @@ public class Main {
         //<-------------------set contact info---------------------------->
         Email ahmedEmail = new Email("ahmedKhaled23@gmail.com", "email", "this is my first email");
         Phone ahmedPhone = new Phone("010123456789", "phone", "this is my first phone");
-        Address ahmedAddress = new Address("kafrelshekh,dessouk", "email", "this is my current address");
+        Address ahmedAddress = new Address("kafrelshekh,dessouk", "address", "this is my current address");
         ahmed.setContactInfo(ahmedEmail, ahmedPhone, ahmedAddress);
         
+        //<------------------edit user info--------------->
+        System.out.print("Enter the ID of the user your want to edit : ");
+        String userId = scanner.next();
+        System.out.println();
+        contact.EditUser(userId);
+
+        //<---------------search a specific contact info ----->
+
         System.out.print("Enter the type of the contact info you want to know : ");
         String contactType = scanner.next();
         System.out.println();
         ahmed.searchContactInfo(contactType);
-        
+
+
     } 
 
     

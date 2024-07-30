@@ -16,4 +16,7 @@ public class Address extends Contacts{
     public String getEmail(){
         return "";
     }
+    public void setPhone(String newContent){}
+    public void setEmail(String newContent){}
+    
 }

@@ -22,6 +22,8 @@ public abstract class Contacts {
     public abstract String getPhone();
     public abstract String getPlace();
     public abstract String getEmail();
-    
+    public abstract void setPhone(String newContent);
+    public abstract void setPlace(String newContent);
+    public abstract void setEmail(String newContent);
 
 }

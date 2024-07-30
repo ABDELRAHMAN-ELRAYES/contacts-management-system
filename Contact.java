@@ -65,15 +65,43 @@ public class Contact {
                                 case 1:
                                     System.out.print("Enter the new Type : ");
                                     String newType = scanner.next();
-                                    
+                                    for(Contacts contact :user.contactInfo){
+                                        if(contact.getType().toLowerCase().equals( contactType.toLowerCase())){
+                                            contact.setType(newType);
+                                        }
+                                    }
                                     break;
                                 case 2:
-
+                                    System.out.print("Enter the new "+ contactType +" : ");
+                                    String newContactContent = scanner.next();
+                                    for(Contacts contact :user.contactInfo){
+                                        if(contact.getType().toLowerCase().equals( contactType.toLowerCase())){
+                                            if(contactType.toLowerCase().equals("email")){
+                                                contact.setEmail(newContactContent);
+                                            }else if(contactType.toLowerCase().equals("phone")){
+                                                contact.setPhone(newContactContent);
+                                            }else{
+                                                contact.setPlace(newContactContent);
+                                            }
+                                        }
+                                    }
                                     break;
                                 case 3 :
+                                    System.out.print("Enter the new Description : ");
+                                    String newDescription = scanner.next();
+                                    for(Contacts contact :user.contactInfo){
+                                        System.out.println(contact.getType().toLowerCase().equals( contactType.toLowerCase()));
+                                        
+                                        if(contact.getType().toLowerCase().equals( contactType.toLowerCase())){
+                                            System.out.println(contact.getDescription());
+                                            contact.setDescription(newDescription);
+                                            System.out.println(contact.getDescription());
+                                        }
+                                    }
                                     break;
                                 default:
                                     break;
+                                
                             }
                             break;
                         default:
@@ -91,8 +119,10 @@ public class Contact {
         }
         if(!userFound){
             System.out.println("Sorry, user with entered ID is not found");
+            return;
         }
     }
+    
     public int CountUser(){
         numberOfUsers=users.size();
         return numberOfUsers;

@@ -21,7 +21,7 @@ public class User{
         String contactDescription="";
         boolean contactFound = false;
         for(Contacts contact:contactInfo){
-            if(type.equals(contact.getType())){
+            if(type.toLowerCase().equals(contact.getType())){
                 switch (type) {
                     case "phone":
                         contactContent=contact.getPhone();
